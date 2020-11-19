@@ -1,13 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import FakeHome from './Pages/FakeHome';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home  from './Pages/Home';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hackathon Project</p>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/' component={FakeHome} exact />
+        <Route path='/redirect' component={Home} />
+      </Switch>
+    </Router>
   );
 }
 
