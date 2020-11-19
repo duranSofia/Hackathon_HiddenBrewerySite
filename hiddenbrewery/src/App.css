@@ -1,14 +1,8 @@
 .App {
   text-align: center;
-  background-image: url("/src/media/background-retro.jpg");
+  background-image: url("/src/media/4352312.jpg");
   background-repeat: repeat;
   margin: 0;
-}
-.main-container {
-  background-color: rgb(12, 18, 18);
-  color: white;
-  height: fit-content;
-  margin: 25px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
