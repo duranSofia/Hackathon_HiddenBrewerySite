@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Switch>
         <Route path='/' component={FakeHome} exact />
-        <Route path='/redirect' component={Home} />
+        <Route path='/redirect' component={Home} exact />
       </Switch>
     </Router>
   );
