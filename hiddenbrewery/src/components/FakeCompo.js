@@ -15,12 +15,13 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import {fakeData} from '../utils/fakeData.js';
 
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        My Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -78,7 +79,7 @@ export default function FakeCompo() {
         </Toolbar>
       </AppBar>
       <main>
-        {/* Hero unit */}
+        
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
