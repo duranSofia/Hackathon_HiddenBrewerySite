@@ -1,6 +1,6 @@
 .Home {
   text-align: center;
-  background-color: black;
+  background-color: rgb(0, 2, 29);
   background-repeat: repeat;
   margin: 0;
   color: white;
@@ -16,10 +16,9 @@ div {
   border: 0.5px solid rgba(255, 255, 255, 0.071);
 }
 
-.menu-selector div {
-  border: 0.5px solid white;
-  border-radius: 5px;
-  padding: 10px;
+.menu-selector {
+  background: whitesmoke;
+  margin: 25px;
 }
 
 .map {

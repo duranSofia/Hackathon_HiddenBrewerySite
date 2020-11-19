@@ -47,7 +47,11 @@ export default function Results(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        map goes here // TODO Move map component here, pass bars as props
+        <div>
+          {!props.loading && (
+            <MyMapComponent isMarkerShown places={props.bars} />
+          )}
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <BarsList bars={props.bars}></BarsList>

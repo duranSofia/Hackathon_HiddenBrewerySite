@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    margin: 5,
   },
   media: {
     height: 140,
@@ -25,16 +26,16 @@ export default function BarCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://material-ui.com/static/images/cards/contemplative-reptile.jpg"
+          image="https://i.dailymail.co.uk/i/pix/2013/01/27/article-0-173003B4000005DC-688_634x478.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            The Cotton Club
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            The Cotton Club, pictured, was a famous jazz music night club
+            located in Harlem, New York City has operated since 1923.
           </Typography>
         </CardContent>
       </CardActionArea>
