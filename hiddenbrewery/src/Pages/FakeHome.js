@@ -1,9 +1,10 @@
 import React from 'react'
+import FakeCompo from '../components/FakeCompo'
 
 const FakeHome = () => {
     return (
         <>
-            <h1>Fake Home Test</h1>
+            <FakeCompo/>
         </>
     )
 }
