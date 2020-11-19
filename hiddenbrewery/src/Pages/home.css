@@ -1,3 +1,34 @@
 div {
-  border: 1px solid white;
+  /* border: 0.5px solid white; */
+  padding: 10px;
+}
+
+.menu-selector div {
+  border: 0.5px solid yellow;
+  border-radius: 5px;
+}
+
+.map {
+  color: black;
+  background-color: honeydew;
+  width: 100%;
+  height: 200px;
+}
+
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  height: 150px;
+}
+
+.image-card {
+  background-color: goldenrod;
+  width: 500px;
+  margin-left: 10px;
+  height: auto;
 }
