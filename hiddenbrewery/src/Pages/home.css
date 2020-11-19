@@ -1,6 +1,6 @@
-/* div {
-  border: 0.5px solid white;
-} */
+div {
+  border: 0.5px solid rgba(255, 255, 255, 0.071);
+}
 
 .menu-selector div {
   border: 0.5px solid yellow;
