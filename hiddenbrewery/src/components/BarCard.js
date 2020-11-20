@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: 300,
     margin: 5,
   },
   media: {
@@ -26,16 +26,17 @@ export default function BarCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://i.dailymail.co.uk/i/pix/2013/01/27/article-0-173003B4000005DC-688_634x478.jpg"
-          title="Contemplative Reptile"
+          image={props.image}
+          title="retro-bar"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {props.bardata}
+            {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            The Cotton Club, pictured, was a famous jazz music night club
-            located in Harlem, New York City has operated since 1923.
+            <p> {props.street}</p>
+            <a href={props.website}>{props.website}</a>
+            <p></p>
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -44,25 +45,9 @@ export default function BarCard(props) {
           Share
         </Button>
         <Button size="small" variant="contained">
-          Learn More
+          Visit
         </Button>
       </CardActions>
     </Card>
-    // <div className="card">
-    //   <div className="image-card"></div>
-    //   <div>
-    //     <h3>Bar Name</h3>
-    //     <p>
-    //       Open Brewery DB is a free dataset and API with public information on
-    //       breweries, cideries, brewpubs, and bottleshops. The goal of Open
-    //       Brewery DB is to maintain an open-source, community-driven dataset and
-    //       provide a public API. It is our
-    //     </p>
-    //     <Button variant="contained">Default</Button>
-    //     <Button variant="contained" color="primary">
-    //       Primary
-    //     </Button>
-    //   </div>
-    // </div>
   );
 }

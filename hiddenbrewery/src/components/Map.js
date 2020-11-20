@@ -54,6 +54,7 @@ const MarkerComponent = (props) => {
           <div>
             <h4 className="mapCard">{props.place.name}</h4>
             {props.place.street !== "" && <p>Address: {props.place.street}</p>}
+            <p>{props.place.website_url}</p>
           </div>
         </InfoWindow>
       )}

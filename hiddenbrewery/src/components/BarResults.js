@@ -35,7 +35,7 @@ export default function Results(props) {
     setValue(newValue);
   };
 
-  console.log("Bar Results", props);
+  console.log("Bar Results-->", props.bars);
   return (
     <div className="results-section">
       <AppBar position="static">
@@ -44,12 +44,15 @@ export default function Results(props) {
           onChange={handleTabChange}
           aria-label="simple tabs example"
         >
-          <Tab label="Map" />
           <Tab label="List" />
+          <Tab label="Map" />
         </Tabs>
       </AppBar>
 
       <TabPanel value={value} index={0}>
+        <BarsList barsData={props.bars}></BarsList>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
         <div>
           <MyMapComponent
             isMarkerShown
@@ -57,9 +60,6 @@ export default function Results(props) {
             userCoordinates={props.userCoordinates}
           />
         </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <BarsList></BarsList>
       </TabPanel>
     </div>
   );

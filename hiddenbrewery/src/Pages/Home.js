@@ -86,49 +86,54 @@ export default class Home extends Component {
   }
   render() {
     return (
-      <>
-        <Header />
-        <div className="filters-container">
+      <div className="Home">
+        <div className="main-container">
+          <Header />
           <div>
-            <label>State</label>
+            <div className="filters-container">
+              <div>
+                <label>State</label>
 
-            <select
-              placeholder="state"
-              value={this.state.selectedState}
-              onChange={this.changeState}
-            >
-              <option>--Choose State--</option>
-              {Object.keys(this.state.USInfo).map((state, index) => {
-                return <option key={index}>{state}</option>;
-              })}
-            </select>
-          </div>
-          <div>
-            <label>City</label>
-
-            <select
-              placeholder="city"
-              value={this.state.selectedCity}
-              onChange={this.changeCity}
-            >
-              <option>--Choose City--</option>
-              {this.state.selectedState !== "--Choose State--" &&
-                this.state.USInfo[this.state.selectedState].map(
-                  (city, index) => {
-                    return <option key={index}>{city}</option>;
-                  }
-                )}
-            </select>
-          </div>
-          <div>
-            <BarResults
-              userCoordinates={this.state?.userCoordinates}
-              bars={this.state?.breweries}
-            />
+                <select
+                  placeholder="state"
+                  value={this.state.selectedState}
+                  onChange={this.changeState}
+                >
+                  <option>--Choose State--</option>
+                  {Object.keys(this.state.USInfo).map((state, index) => {
+                    return <option key={index}>{state}</option>;
+                  })}
+                </select>
+              </div>
+              <div>
+                <label>City</label>
+                <select
+                  placeholder="city"
+                  value={this.state.selectedCity}
+                  onChange={this.changeCity}
+                >
+                  <option>--Choose City--</option>
+                  {this.state.selectedState !== "--Choose State--" &&
+                    this.state.USInfo[this.state.selectedState].map(
+                      (city, index) => {
+                        return <option key={index}>{city}</option>;
+                      }
+                    )}
+                </select>
+              </div>
+            </div>
+            <div className="map-view">
+              <BarResults
+                userCoordinates={this.state?.userCoordinates}
+                bars={this.state?.breweries}
+              />
+            </div>
           </div>
         </div>
-        <Footer />
-      </>
+        <div className="footer-container">
+          <Footer />
+        </div>
+      </div>
     );
   }
 }
