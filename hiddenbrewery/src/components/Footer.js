@@ -1,9 +1,10 @@
 import React from "react";
+import "./Footer.css";
 
 export default function Footer() {
   return (
     <div>
-      <p>Footer info will go here</p>
+      <footer className="footer">Footer goes here</footer>
     </div>
   );
 }

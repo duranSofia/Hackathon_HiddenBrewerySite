@@ -1,46 +1,23 @@
 .Home {
   text-align: center;
-  background-color: rgb(0, 2, 29);
+  background-image: url("/src/media/retro_bg.jpg");
+  background-color: #0d1427;
   background-repeat: repeat;
-  margin: 0;
   color: white;
+  font-family: "Poiret One", cursive;
 }
 
 .main-container {
-  background-color: rgb(12, 18, 18);
+  background-color: #0d1427;
+  border: 1px solid goldenrod;
   height: fit-content;
   margin: 25px;
 }
 
-div {
-  border: 0.5px solid rgba(255, 255, 255, 0.071);
+.results-section {
+  background-color: #0d1427;
 }
-
-.menu-selector {
-  background: whitesmoke;
-  margin: 25px;
-}
-
-.map {
-  background-color: honeydew;
-  width: 100%;
-  height: 200px;
-}
-
-.cards-section {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  display: flex;
-  width: 100%;
-  height: 150px;
-}
-
-.image-card {
-  background-color: goldenrod;
-  width: 500px;
-  margin-left: 10px;
-  height: auto;
-}
+/* font-family: "Limelight", cursive;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poiret One", cursive;
+  font-family: "Roboto", sans-serif; */

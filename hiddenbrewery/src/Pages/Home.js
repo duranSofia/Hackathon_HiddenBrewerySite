@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import MyMapComponent from "../components/Map";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./home.css";
@@ -24,19 +23,18 @@ export default class Home extends Component {
     console.log("fetch", this.state.data);
     return (
       <div className="Home">
-        <Header />
         <div className="main-container">
-          <div>Search categories</div>
-          <div className="menu-selector">
+          <Header />
+          <div>
             <SearchFilters />
+            {this.state.loading ? (
+              "loading ADD from material ui... "
+            ) : (
+              <BarResults bars={this.state?.data} />
+            )}
           </div>
-          {this.state.loading ? (
-            "loading ADD from material ui... "
-          ) : (
-            <BarResults bars={this.state?.data} />
-          )}
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }
