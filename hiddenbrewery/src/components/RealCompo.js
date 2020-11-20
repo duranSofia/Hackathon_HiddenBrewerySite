@@ -1,7 +1,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom';
 
-const HomeCompo = ({isLoggedIn}) => {
+const RealCompo = ({isLoggedIn}) => {
 
   return isLoggedIn ? (
     <h1>
@@ -17,4 +17,4 @@ const HomeCompo = ({isLoggedIn}) => {
   ) : <Redirect to="/" />
 }
 
-export default HomeCompo
+export default RealCompo
