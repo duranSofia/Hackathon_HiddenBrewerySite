@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Card from '@material-ui/core/Card';
-
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
+import "./details.css";
 
 const formatNumber = (phoneStr) => {
     let cleaned = ("", phoneStr).replace(/\D/g, "");
@@ -35,23 +38,24 @@ const formatNumber = (phoneStr) => {
         // console.log(breweryAddress);
     
         return loading ? <h1>loading...</h1>: 
-            (<Card>
-                <ul>   
-                    <li>Id :{breweryData.id}</li>
-                    <li>name:{breweryData.name}</li>
+            (<Card className="Card-details" variant="outlined">
+                <CardContent >
+                <Typography className='Card-con'>   
+                    <li>{breweryData.id}</li>
+                    <li>{breweryData.name}</li>
                    
                     <li>{breweryData.brewery_type[0].toUpperCase() +
                      breweryData.brewery_type.slice(1)}</li>
                                 
-                    <li>{breweryData.street}, {breweryData.city}, {breweryData.state }, {breweryData.postal_code}</li> 
+                    <li>{breweryData.city}, {breweryData.state }, {breweryData.postal_code}</li> 
                     <li>{formatNumber(breweryData.phone)}</li>
                                        
-                    <li>{breweryData.website_url}</li>
-                    <Button variant="contained" color="primary">
-                        Close
-                    </Button>   
-                </ul>
+                    <Link>{breweryData.website_url}</Link>
+                </Typography>
+                </CardContent>
             </Card>)
+                
+           
            
     };
     
