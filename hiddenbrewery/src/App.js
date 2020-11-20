@@ -29,7 +29,9 @@ console.log(loggedIn)
     {loggedIn && <Redirect to="/access-allowed" />}
 
       <Header />
-        <button style={{zIndex:999999, position:"absolute", opacity:0, height:"60px", width:"400px"}} onClick={()=>{listen()}}>Hello World</button>
+        <div style={{position: 'relative', left: '47%', top: '17px'}}> 
+        <button style={{zIndex:9999, position:"fixed",display:'block', marginLeft: 'auto', marginRight: 'auto', height:"25px", width:"60px"}} onClick={()=>{listen()}}>help?</button>
+        </div>
       <Switch>
         <Route path='/' component={FakeHome} exact />
         <Route path="/access-allowed" exact>
