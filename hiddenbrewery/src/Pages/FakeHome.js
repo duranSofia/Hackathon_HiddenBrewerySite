@@ -18,7 +18,8 @@ const FakeHome = () => {
         <input placeholder='username' value={input1} onInput={e => setInput1(e.target.value)}/>
         <input type='password' placeholder='password' value={input2} onInput={e => setInput2(e.target.value)}/>
         </NewsCard>
-        <CompoChoose> {input1 === 'freeAlcohol' && input2 === '123456' &&  <Home/> || <FakeCompo/>}  </CompoChoose>
+        {/* <CompoChoose> {input1 === 'freeAlcohol' && input2 === '123456' &&  <Home/> || <FakeCompo/>}  </CompoChoose> */}
+  <Home/> 
     </MainWrap>
   );
 };

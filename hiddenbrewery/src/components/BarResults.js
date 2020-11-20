@@ -33,7 +33,8 @@ export default function Results(props) {
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  
+  console.log("Bar Results", props);
   return (
     <div className="results-section">
       <AppBar position="static">
@@ -48,9 +49,9 @@ export default function Results(props) {
       </AppBar>
       <TabPanel value={value} index={0}>
         <div>
-          {!props.loading && (
+          {/* {!props.loading && (
             <MyMapComponent isMarkerShown places={props.bars} />
-          )}
+          )} */}
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
