@@ -1,0 +1,24 @@
+.filters-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-style: double;
+  border-left: none;
+  border-right: none;
+  border-color: goldenrod;
+}
+
+.filters-container label {
+  width: 200px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 8px;
+}
+
+.filters-container select {
+  font-family: inherit;
+  font-weight: 900;
+  padding: 10px;
+  margin: 5px;
+}

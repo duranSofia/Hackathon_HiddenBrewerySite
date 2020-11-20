@@ -1,0 +1,7 @@
+.tabs-bar {
+  background-color: goldenrod;
+  color: #0d1427;
+  justify-items: center;
+  display: flex;
+  justify-content: center;
+}
