@@ -130,17 +130,13 @@ export default function FakeCompo() {
       </main>
       <div className={classes.heroButtons}>
         <Grid container spacing={2} justify="center">
-          <Grid item>
-            <Button variant="contained" color="primary">
-              Main call to action
-            </Button>
-          </Grid>
+          <Grid item></Grid>
         </Grid>
       </div>
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Ask your husband to do it too ;)
         </Typography>
         <Typography
           variant="subtitle1"
@@ -148,9 +144,8 @@ export default function FakeCompo() {
           color="textSecondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Call us now to get your free machine!
         </Typography>
-        <Copyright />
       </footer>
       {/* End footer */}
     </React.Fragment>
