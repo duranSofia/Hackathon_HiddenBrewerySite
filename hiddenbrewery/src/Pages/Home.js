@@ -23,16 +23,18 @@ export default class Home extends Component {
     console.log("fetch", this.state.data);
     return (
       <div className="Home">
-        <Header />
         <div className="main-container">
-          <SearchFilters />
-          {this.state.loading ? (
-            "loading ADD from material ui... "
-          ) : (
-            <BarResults bars={this.state?.data} />
-          )}
+          <Header />
+          <div>
+            <SearchFilters />
+            {this.state.loading ? (
+              "loading ADD from material ui... "
+            ) : (
+              <BarResults bars={this.state?.data} />
+            )}
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }

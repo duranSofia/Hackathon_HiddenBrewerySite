@@ -8,7 +8,8 @@
 }
 
 .main-container {
-  background-color: rgb(12, 18, 18);
+  background-color: #0d1427;
+  border: 1px solid goldenrod;
   height: fit-content;
   margin: 25px;
 }
