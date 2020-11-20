@@ -1,0 +1,27 @@
+.Home {
+  text-align: center;
+  background-image: url("/src/media/retro_bg.jpg");
+  background-color: #0d1427;
+  background-repeat: repeat;
+  color: white;
+  font-family: "Poiret One", cursive;
+}
+
+.main-container {
+  background-color: #0d1427;
+  border: 1px solid goldenrod;
+  height: fit-content;
+  margin: 25px;
+}
+
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.results-section {
+  background-color: #0d1427;
+}
+/* font-family: "Limelight", cursive;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poiret One", cursive;
+  font-family: "Roboto", sans-serif; */
