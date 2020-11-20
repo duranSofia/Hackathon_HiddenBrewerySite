@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import BarsList from "./BarsList";
 import MyMapComponent from "./Map";
+import "./resultsTab.css";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,15 +48,18 @@ export default function Results(props) {
           <Tab label="List" />
         </Tabs>
       </AppBar>
+
       <TabPanel value={value} index={0}>
         <div>
+
           {/* {!props.loading && (
             <MyMapComponent isMarkerShown places={props.bars} />
           )} */}
+
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <BarsList bars={props.bars}></BarsList>
+        <BarsList barsCardInfo={props.barsList}></BarsList>
       </TabPanel>
     </div>
   );

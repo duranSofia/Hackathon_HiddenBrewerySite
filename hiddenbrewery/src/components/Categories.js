@@ -1,4 +1,5 @@
 import React from "react";
+import "./FilterCategories.css";
 import USStates from "./Info/States&Cities.json";
 import MyMapComponent from "./Map";
 import Geocode from "react-geocode";
@@ -7,10 +8,14 @@ import GoogleKey from "../key";
 Geocode.setApiKey(GoogleKey);
 
 
+import BarResults from "../components/BarResults";
+
+
 class Categories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       USInfo: USStates,
       states: [],
       cities: [],
@@ -76,28 +81,29 @@ getGeocode(place){
   fetchCity(city) {
     fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
       .then((resp) => resp.json())
-      .then((data) => this.setState({ breweries: data }));
+      .then((data) => this.setState({ breweries: data, loading: false }));
   }
 
   render() {
     return (
-      <div>
-        <label>State</label>
-        <br />
-        <select
-          placeholder="state"
-          value={this.state.selectedState}
-          onChange={this.changeState}
-        >
-          <option>--Choose State--</option>
-          {Object.keys(this.state.USInfo).map((state, index) => {
-            return <option key={index}>{state}</option>;
-          })}
-        </select>
-        <br />
+      <div className="filters-container">
+        <div>
+          <label>State</label>
+
+          <select
+            placeholder="state"
+            value={this.state.selectedState}
+            onChange={this.changeState}
+          >
+            <option>--Choose State--</option>
+            {Object.keys(this.state.USInfo).map((state, index) => {
+              return <option key={index}>{state}</option>;
+            })}
+          </select>
+        </div>
         <div>
           <label>City</label>
-          <br />
+
           <select
             placeholder="city"
             value={this.state.selectedCity}
@@ -107,12 +113,12 @@ getGeocode(place){
             {/* {this.state.selectedState !== "--Choose City--" &&
              <MyMapComponent centerLat={this.state.coordinatesLat} centerLng={this.state.coordinatesLng} markerIsShown places={this.state.breweries} /> } */}
           </select>
-          <ul>
-            {this.state.breweries.map((brewery) => {
-              return <li>{brewery.name}</li>;
-            })}
-          </ul>
         </div>
+        {this.state.loading ? (
+          "loading ADD from material ui... "
+        ) : (
+          <BarResults bars={this.state?.data} />
+        )}
       </div>
     );
   } 

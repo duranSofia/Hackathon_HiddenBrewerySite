@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function BarCard() {
+export default function BarCard(props) {
   const classes = useStyles();
 
   return (
@@ -31,7 +31,7 @@ export default function BarCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            The Cotton Club
+            {props.bardata}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             The Cotton Club, pictured, was a famous jazz music night club

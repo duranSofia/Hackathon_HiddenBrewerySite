@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Categories from "../components/Categories";
 import "./home.css";
 import BarResults from "../components/BarResults";
 import Categories from "../components/Categories";
 import MyMapComponent from "../components/Map";
-
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
+
       loading: true,
       userCoordinates: null
     };
@@ -27,12 +28,13 @@ export default class Home extends Component {
       .then((places) => this.setState({ data: places }))
       .finally(() => this.setState({ loading: false }));
   }
+
   render() {
-    console.log("fetch", this.state.data);
     return (
       <div className="Home">
         <div className="main-container">
           <Header />
+
           <div>
            <Categories onUpdateCoordinates={(newCoord)=> this.updateCoordinates(newCoord)} />
             {this.state.loading ? (
@@ -42,9 +44,12 @@ export default class Home extends Component {
               <MyMapComponent isMarkerShown places={this.state.data} userCoordinates={this.state.userCoordinates} />
 
             )}
+
+          <div className="footer-container">
+            <Footer />
           </div>
-          <Footer />
         </div>
+      </div>
       </div>
     );
   }
