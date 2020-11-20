@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 import "./home.css";
 import BarResults from "../components/BarResults";
-import Categories from "../components/Categories";
+// import Categories from "../components/Categories";
 import MyMapComponent from "../components/Map";
 
 export default class Home extends Component {
