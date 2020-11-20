@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import MyMapComponent from "../components/Map";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./home.css";
@@ -26,10 +25,7 @@ export default class Home extends Component {
       <div className="Home">
         <Header />
         <div className="main-container">
-          <div>Search categories</div>
-          <div className="menu-selector">
-            <SearchFilters />
-          </div>
+          <SearchFilters />
           {this.state.loading ? (
             "loading ADD from material ui... "
           ) : (

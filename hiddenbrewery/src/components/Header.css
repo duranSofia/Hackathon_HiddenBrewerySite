@@ -1,0 +1,28 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  padding: 2px 10px;
+  background-color: #0d1427;
+  color: white;
+  /* border: 1px solid white; */
+}
+
+.header button {
+  color: white;
+  font-family: "Poiret One", cursive;
+  font-weight: bolder;
+  justify-self: left;
+  margin-left: 20px;
+}
+/* 
+.menu-item {
+  color: white;
+  font-family: "Poiret One", cursive;
+  font-weight: bolder;
+  background-color: #0d1427;
+} */
+
+.header h2 {
+  font-family: "Poiret One", cursive;
+  font-size: 1.5rem;
+}

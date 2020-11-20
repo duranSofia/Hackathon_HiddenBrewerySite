@@ -35,7 +35,7 @@ export default function Results(props) {
   };
 
   return (
-    <div>
+    <div className="results-section">
       <AppBar position="static">
         <Tabs
           value={value}
