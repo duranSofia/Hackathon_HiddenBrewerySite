@@ -10,8 +10,7 @@ class Categories extends React.Component {
       cities: [],
       selectedState: "--Choose State--",
       selectedCity: "--Choose City--",
-      stateBreweries: [],
-      cityBreweries: [],
+      breweries: [],
     };
     this.changeState = this.changeState.bind(this);
     this.changeCity = this.changeCity.bind(this);
@@ -43,13 +42,13 @@ class Categories extends React.Component {
   fetchState(state) {
     fetch(`https://api.openbrewerydb.org/breweries?by_state=${state}`)
       .then((resp) => resp.json())
-      .then((data) => this.setState({ stateBreweries: data }));
+      .then((data) => this.setState({ breweries: data }));
   }
 
   fetchCity(city) {
     fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
       .then((resp) => resp.json())
-      .then((data) => this.setState({ stateBreweries: data }));
+      .then((data) => this.setState({ breweries: data }));
   }
 
   render() {
@@ -83,13 +82,8 @@ class Categories extends React.Component {
               })}
           </select>
           <ul>
-            {this.state.stateBreweries.map((brewery) => {
+            {this.state.breweries.map((brewery) => {
               return <li>{brewery.name}</li>;
-            })}
-          </ul>
-          <ul>
-            {this.state.cityBreweries.map((brewery) => {
-              return <li>{brewery.id}</li>;
             })}
           </ul>
         </div>
