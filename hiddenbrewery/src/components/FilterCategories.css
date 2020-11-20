@@ -1,7 +1,5 @@
 .filters-container {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  display: block;
   padding: 10px;
   border-style: double;
   border-left: none;

@@ -35,6 +35,10 @@
 .results-section {
   background-color: #0d1427;
 }
+
+.map-tabs {
+  display: block;
+}
 /* font-family: "Limelight", cursive;
   font-family: "Open Sans", sans-serif;
   font-family: "Poiret One", cursive;

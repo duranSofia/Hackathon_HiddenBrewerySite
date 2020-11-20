@@ -34,7 +34,7 @@ export default function Results(props) {
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
   };
-  
+
   console.log("Bar Results", props);
   return (
     <div className="results-section">
@@ -51,15 +51,15 @@ export default function Results(props) {
 
       <TabPanel value={value} index={0}>
         <div>
-
-          {/* {!props.loading && (
-            <MyMapComponent isMarkerShown places={props.bars} />
-          )} */}
-
+          <MyMapComponent
+            isMarkerShown
+            places={props.bars}
+            userCoordinates={props.userCoordinates}
+          />
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <BarsList barsCardInfo={props.barsList}></BarsList>
+        <BarsList></BarsList>
       </TabPanel>
     </div>
   );
