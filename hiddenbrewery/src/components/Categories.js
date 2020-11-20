@@ -3,13 +3,10 @@ import "./FilterCategories.css";
 import USStates from "./Info/States&Cities.json";
 import MyMapComponent from "./Map";
 import Geocode from "react-geocode";
-import GoogleKey from "../key"; 
-
-Geocode.setApiKey(GoogleKey);
-
-
+import GoogleKey from "../key";
 import BarResults from "../components/BarResults";
 
+Geocode.setApiKey(GoogleKey);
 
 class Categories extends React.Component {
   constructor(props) {
@@ -29,22 +26,17 @@ class Categories extends React.Component {
     this.changeCity = this.changeCity.bind(this);
   }
 
-  
-  
-
-
-getGeocode(place){
-  Geocode.fromAddress(place)
-.then(
-    response => {
-       this.props.onUpdateCoordinates(response.results[0].geometry.location)
-       console.log("geocode", response.results[0].geometry.location);
-       },
-    error => {
-       console.log("oops", error);
-       })
-}
-
+  getGeocode(place) {
+    Geocode.fromAddress(place).then(
+      (response) => {
+        this.props.onUpdateCoordinates(response.results[0].geometry.location);
+        console.log("geocode", response.results[0].geometry.location);
+      },
+      (error) => {
+        console.log("oops", error);
+      }
+    );
+  }
 
   changeState(event) {
     this.setState({ selectedState: event.target.value }, () => {
@@ -54,7 +46,7 @@ getGeocode(place){
     this.setState({ states: Object.keys(this.state.USInfo) }, () => {
       console.log("states", this.state.states);
     });
-    this.getGeocode(event.target.value)
+    this.getGeocode(event.target.value);
   }
 
   changeCity(event) {
@@ -68,8 +60,7 @@ getGeocode(place){
         console.log("cities", this.state.cities);
       }
     );
-    this.getGeocode(event.target.value)
-
+    this.getGeocode(event.target.value);
   }
 
   fetchState(state) {
@@ -110,8 +101,10 @@ getGeocode(place){
             onChange={this.changeCity}
           >
             <option>--Choose City--</option>
-            {/* {this.state.selectedState !== "--Choose City--" &&
-             <MyMapComponent centerLat={this.state.coordinatesLat} centerLng={this.state.coordinatesLng} markerIsShown places={this.state.breweries} /> } */}
+            {this.state.selectedState !== "--Choose State--" &&
+              this.state.USInfo[this.state.selectedState].map((city, index) => {
+                return <option key={index}>{city}</option>;
+              })}
           </select>
         </div>
         {this.state.loading ? (
@@ -121,8 +114,7 @@ getGeocode(place){
         )}
       </div>
     );
-  } 
+  }
 }
-
 
 export default Categories;

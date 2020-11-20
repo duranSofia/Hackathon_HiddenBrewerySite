@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Categories from "../components/Categories";
 import "./home.css";
 import BarResults from "../components/BarResults";
 import Categories from "../components/Categories";
@@ -14,12 +13,12 @@ export default class Home extends Component {
       data: [],
 
       loading: true,
-      userCoordinates: null
+      userCoordinates: null,
     };
   }
-  updateCoordinates(newCoord){
-    console.log("new", newCoord)
-    this.setState({userCoordinates:newCoord})
+  updateCoordinates(newCoord) {
+    console.log("new", newCoord);
+    this.setState({ userCoordinates: newCoord });
   }
 
   componentDidMount() {
@@ -36,20 +35,27 @@ export default class Home extends Component {
           <Header />
 
           <div>
-           <Categories onUpdateCoordinates={(newCoord)=> this.updateCoordinates(newCoord)} />
+            <Categories
+              onUpdateCoordinates={(newCoord) =>
+                this.updateCoordinates(newCoord)
+              }
+            />
             {this.state.loading ? (
               "loading ADD from material ui... "
             ) : (
               // <BarResults bars={this.state?.data} />
-              <MyMapComponent isMarkerShown places={this.state.data} userCoordinates={this.state.userCoordinates} />
-
+              <MyMapComponent
+                isMarkerShown
+                places={this.state.data}
+                userCoordinates={this.state.userCoordinates}
+              />
             )}
 
-          <div className="footer-container">
-            <Footer />
+            <div className="footer-container">
+              <Footer />
+            </div>
           </div>
         </div>
-      </div>
       </div>
     );
   }
