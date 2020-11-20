@@ -1,12 +1,32 @@
-import React from 'react'
-import FakeCompo from '../components/FakeCompo'
+import FakeCompo from "../components/FakeCompo";
+import Home from "./Home";
+import React, { useState } from "react";
+import {
+  CompoChoose,
+  LabelDiv,
+  MainWrap,
+  NewsCard,
+} from "../components/styledElements";
 
 const FakeHome = () => {
-    return (
-        <>
-            <FakeCompo/>
-        </>
-    )
-}
+  const [input, setInput] = useState("");
 
-export default FakeHome
+  return (
+    <MainWrap>
+      <NewsCard className="newsLetter">
+        <LabelDiv>need help?</LabelDiv>
+        <input
+          placeholder="ask us a question"
+          value={input}
+          onInput={(e) => setInput(e.target.value)}
+        />
+      </NewsCard>
+      <CompoChoose>
+        {" "}
+        {(input === "123456" && <Home />) || <FakeCompo />}{" "}
+      </CompoChoose>
+    </MainWrap>
+  );
+};
+
+export default FakeHome;
