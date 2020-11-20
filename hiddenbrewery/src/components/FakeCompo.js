@@ -86,7 +86,7 @@ export default function FakeCompo() {
               color="textPrimary"
               gutterBottom
             >
-              What She Need
+              What She Needs
             </Typography>
             <Typography
               variant="h5"
