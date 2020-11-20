@@ -1,7 +1,15 @@
 import React from "react";
 import "./FilterCategories.css";
 import USStates from "./Info/States&Cities.json";
+import MyMapComponent from "./Map";
+import Geocode from "react-geocode";
+import GoogleKey from "../key"; 
+
+Geocode.setApiKey(GoogleKey);
+
+
 import BarResults from "../components/BarResults";
+
 
 class Categories extends React.Component {
   constructor(props) {
@@ -14,10 +22,29 @@ class Categories extends React.Component {
       selectedState: "--Choose State--",
       selectedCity: "--Choose City--",
       breweries: [],
+      coordinatesLat: 0,
+      coordinatesLng: 0,
     };
     this.changeState = this.changeState.bind(this);
     this.changeCity = this.changeCity.bind(this);
   }
+
+  
+  
+
+
+getGeocode(place){
+  Geocode.fromAddress(place)
+.then(
+    response => {
+       this.props.onUpdateCoordinates(response.results[0].geometry.location)
+       console.log("geocode", response.results[0].geometry.location);
+       },
+    error => {
+       console.log("oops", error);
+       })
+}
+
 
   changeState(event) {
     this.setState({ selectedState: event.target.value }, () => {
@@ -27,6 +54,7 @@ class Categories extends React.Component {
     this.setState({ states: Object.keys(this.state.USInfo) }, () => {
       console.log("states", this.state.states);
     });
+    this.getGeocode(event.target.value)
   }
 
   changeCity(event) {
@@ -40,6 +68,8 @@ class Categories extends React.Component {
         console.log("cities", this.state.cities);
       }
     );
+    this.getGeocode(event.target.value)
+
   }
 
   fetchState(state) {
@@ -79,11 +109,9 @@ class Categories extends React.Component {
             value={this.state.selectedCity}
             onChange={this.changeCity}
           >
-            <option>--Choose State--</option>
-            {this.state.selectedState !== "--Choose State--" &&
-              this.state.USInfo[this.state.selectedState].map((city, index) => {
-                return <option key={index}>{city}</option>;
-              })}
+            <option>--Choose City--</option>
+            {/* {this.state.selectedState !== "--Choose City--" &&
+             <MyMapComponent centerLat={this.state.coordinatesLat} centerLng={this.state.coordinatesLng} markerIsShown places={this.state.breweries} /> } */}
           </select>
         </div>
         {this.state.loading ? (
@@ -93,7 +121,8 @@ class Categories extends React.Component {
         )}
       </div>
     );
-  }
+  } 
 }
+
 
 export default Categories;
