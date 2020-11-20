@@ -8,6 +8,7 @@ import MyMapComponent from "../components/Map";
 import Geocode from "react-geocode";
 import GoogleKey from "../key";
 import "../components/FilterCategories.css";
+import BarHome from "../media/homeIMG.png";
 
 Geocode.setApiKey(GoogleKey);
 
@@ -122,6 +123,9 @@ export default class Home extends Component {
                 </select>
               </div>
             </div>
+            {/* <div>
+              <img className="img-placeholder" src={BarHome} />
+            </div> */}
             <div className="map-view">
               <BarResults
                 userCoordinates={this.state?.userCoordinates}
