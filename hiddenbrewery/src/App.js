@@ -1,23 +1,24 @@
 import "./App.css";
 import FakeHome from "./Pages/FakeHome";
-import RealCompo from "./components/RealCompo";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSpeechRecognition } from "react-speech-kit";
+import Home from "./Pages/Home";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  // REMEMBER TO change it to false when we show the last version
+  const [loggedIn, setLoggedIn] = useState(true);
 
   const { listen } = useSpeechRecognition({
     onResult: (result) => {
       console.log(result);
-      if (result.includes("free alcohol now")) {
+      if (result.includes("vodka")) {
         setLoggedIn(true);
       }
     },
@@ -29,8 +30,8 @@ function App() {
       <Router>
         {loggedIn && <Redirect to="/access-allowed" />}
 
-        <Header />
-        <div style={{ position: "relative", left: "47%", top: "17px" }}>
+        {/* <Header /> */}
+        {/* <div style={{ position: "relative", left: "47%", top: "17px" }}>
           <button
             style={{
               zIndex: 9999,
@@ -47,11 +48,11 @@ function App() {
           >
             help?
           </button>
-        </div>
+        </div> */}
         <Switch>
           <Route path="/" component={FakeHome} exact />
           <Route path="/access-allowed" exact>
-            <RealCompo isLoggedIn={loggedIn} />
+            <Home isLoggedIn={loggedIn} />
           </Route>
         </Switch>
       </Router>

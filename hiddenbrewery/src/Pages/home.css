@@ -5,6 +5,7 @@
   background-repeat: repeat;
   color: white;
   font-family: "Poiret One", cursive;
+  min-height: 50em;
 }
 
 .main-container {
@@ -15,10 +16,11 @@
 }
 
 .footer-container {
+  position: relative;
   background-color: #0d1427;
-  height: fit-content;
-  margin: 0 25px 0 25px;
+  margin: 10px 25px 0 25px;
   padding: 10px;
+  width: 100%;
 }
 
 .footer-container p {

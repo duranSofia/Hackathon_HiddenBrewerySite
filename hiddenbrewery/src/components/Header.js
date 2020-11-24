@@ -5,7 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import FakeHome from "../Pages/FakeHome";
+// import FakeHome from "../Pages/FakeHome";
 
 function Header({ onLogin, loggedIn }) {
   const classes = useStyles();
