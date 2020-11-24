@@ -4,11 +4,10 @@ import USStates from "../components/Info/States&Cities.json";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BarResults from "../components/BarResults";
-import MyMapComponent from "../components/Map";
 import Geocode from "react-geocode";
 import GoogleKey from "../key";
 import "../components/FilterCategories.css";
-import BarHome from "../media/homeIMG.png";
+// import BarHome from "../media/homeIMG.png";
 
 Geocode.setApiKey(GoogleKey);
 
