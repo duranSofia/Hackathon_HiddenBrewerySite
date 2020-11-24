@@ -11,16 +11,15 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import {fakeData} from '../utils/fakeData.js';
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
         My Website
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -41,12 +40,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '100%',
-    display: 'grid',
-    flexDirection: 'column',
+    height: "100%",
+    display: "grid",
+    flexDirection: "column",
   },
   cardMedia: {
-    paddingTop: '100%',
+    paddingTop: "100%",
   },
   cardContent: {
     flexGrow: 1,
@@ -57,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 // const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function FakeCompo() {
@@ -66,15 +64,28 @@ export default function FakeCompo() {
   return (
     <React.Fragment>
 
+      
       <main>
-        
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-            What She Need
+            <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="textPrimary"
+              gutterBottom
+            >
+              What She Needs
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-            Say hello to America's first washing machine! The Thor Washing Machine was the first electric-powered washing machine to be manufactured and sold on a large scale in the United States.
+            <Typography
+              variant="h5"
+              align="center"
+              color="textSecondary"
+              paragraph
+            >
+              Say hello to America's first washing machine! The Thor Washing
+              Machine was the first electric-powered washing machine to be
+              manufactured and sold on a large scale in the United States.
             </Typography>
           </Container>
         </div>
@@ -107,23 +118,23 @@ export default function FakeCompo() {
         </Container>
       </main>
       <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-              </Grid>
-            </div>
+        <Grid container spacing={2} justify="center">
+          <Grid item></Grid>
+        </Grid>
+      </div>
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Ask your husband to do it too ;)
         </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="textSecondary"
+          component="p"
+        >
+          Call us now to get your free machine!
         </Typography>
-        <Copyright />
       </footer>
       {/* End footer */}
     </React.Fragment>

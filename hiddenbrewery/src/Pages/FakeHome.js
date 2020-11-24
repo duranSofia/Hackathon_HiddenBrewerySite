@@ -1,13 +1,8 @@
-import React from 'react'
-import FakeCompo from '../components/FakeCompo'
-
+import React from "react";
+import FakeCompo from "../components/FakeCompo";
 
 const FakeHome = () => {
+  return <FakeCompo />;
+};
 
-    return (
-        <FakeCompo/>  
-
-    )
-}
-
-export default FakeHome
+export default FakeHome;
