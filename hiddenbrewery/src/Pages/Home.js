@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./home.css";
 import USStates from "../components/Info/States&Cities.json";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BarResults from "../components/BarResults";
 import Geocode from "react-geocode";
 import GoogleKey from "../key";
 import "../components/FilterCategories.css";
-// import BarHome from "../media/homeIMG.png";
+import { Redirect } from "react-router-dom";
+import RealHeader from "../components/RealHeader";
+import BarHome from "../media/homeIMG.png";
 
 Geocode.setApiKey(GoogleKey);
 
@@ -85,10 +86,11 @@ export default class Home extends Component {
       .then((data) => this.setState({ breweries: data }));
   }
   render() {
-    return (
+    const { isLoggedIn } = this.props;
+    return isLoggedIn ? (
       <div className="Home">
         <div className="main-container">
-          <Header />
+          <RealHeader />
           <div>
             <div className="filters-container">
               <div>
@@ -122,9 +124,7 @@ export default class Home extends Component {
                 </select>
               </div>
             </div>
-            {/* <div>
-              <img className="img-placeholder" src={BarHome} />
-            </div> */}
+
             <div className="map-view">
               <BarResults
                 userCoordinates={this.state?.userCoordinates}
@@ -137,6 +137,8 @@ export default class Home extends Component {
           <Footer />
         </div>
       </div>
+    ) : (
+      <Redirect to="/" />
     );
   }
 }

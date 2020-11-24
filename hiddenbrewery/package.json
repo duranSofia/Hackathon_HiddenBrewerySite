@@ -17,6 +17,7 @@
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-speech-kit": "^3.0.1",
     "sass": "^1.29.0",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
