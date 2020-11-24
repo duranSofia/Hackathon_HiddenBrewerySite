@@ -13,7 +13,7 @@ import Home from "./Pages/Home";
 
 function App() {
   // REMEMBER TO change it to false when we show the last version
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const { listen } = useSpeechRecognition({
     onResult: (result) => {
