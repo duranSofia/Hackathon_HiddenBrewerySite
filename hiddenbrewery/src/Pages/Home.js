@@ -8,7 +8,7 @@ import GoogleKey from "../key";
 import "../components/FilterCategories.css";
 import { Redirect } from "react-router-dom";
 import RealHeader from "../components/RealHeader";
-// import BarHome from "../media/homeIMG.png";
+import BarHome from "../media/homeIMG.png";
 
 Geocode.setApiKey(GoogleKey);
 
@@ -124,9 +124,7 @@ export default class Home extends Component {
                 </select>
               </div>
             </div>
-            {/* <div>
-              <img className="img-placeholder" src={BarHome} />
-            </div> */}
+
             <div className="map-view">
               <BarResults
                 userCoordinates={this.state?.userCoordinates}

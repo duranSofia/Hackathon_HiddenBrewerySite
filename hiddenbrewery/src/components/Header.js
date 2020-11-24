@@ -6,14 +6,31 @@ import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 // import FakeHome from "../Pages/FakeHome";
+import { useSpeechRecognition } from "react-speech-kit";
 
-function Header({ onLogin, loggedIn }) {
+function Header({ onLogin, loggedIn, setLoggedIn }) {
   const classes = useStyles();
   const history = useHistory();
 
   const routeChange = () => {
     let path = `/`;
     history.push(path);
+  };
+
+  const onResult = (result) => {
+    console.log(result);
+    if (result.includes("vodka")) {
+      setLoggedIn(true);
+      stop();
+    }
+  };
+
+  const { listen, stop } = useSpeechRecognition({
+    onResult,
+  });
+
+  const handleHelpClick = () => {
+    listen();
   };
 
   return (
@@ -31,9 +48,29 @@ function Header({ onLogin, loggedIn }) {
           </div>
           <div>
             <div>a shop for your woman!</div>
+            <button onClick={handleHelpClick}>help?</button>
           </div>
         </Toolbar>
       </AppBar>
+
+      {/* <div style={{ position: "relative", left: "47%", top: "17px" }}>
+        <button
+          style={{
+            zIndex: 9999,
+            position: "fixed",
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            height: "25px",
+            width: "60px",
+          }}
+          onClick={() => {
+            listen();
+          }}
+        >
+          help?
+        </button>
+      </div> */}
     </>
   );
 }

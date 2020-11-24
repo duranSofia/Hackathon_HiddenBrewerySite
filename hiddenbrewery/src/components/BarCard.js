@@ -34,9 +34,8 @@ export default function BarCard(props) {
             {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            <p> {props.street}</p>
+            {props.street}
             <a href={props.website}>{props.website}</a>
-            <p></p>
           </Typography>
         </CardContent>
       </CardActionArea>
