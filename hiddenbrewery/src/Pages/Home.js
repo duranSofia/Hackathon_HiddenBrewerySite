@@ -3,6 +3,10 @@ import "./home.css";
 import USStates from "../components/Info/States&Cities.json";
 import Footer from "../components/Footer";
 import BarResults from "../components/BarResults";
+
+
+import MyMapComponent from "../components/Map";
+
 import Geocode from "react-geocode";
 import GoogleKey from "../key";
 import { Redirect } from "react-router-dom";
@@ -10,6 +14,7 @@ import RealHeader from "../components/RealHeader";
 import BarHome from "../media/homeIMG.png";
 
 Geocode.setApiKey(GoogleKey);
+
 
 export default class Home extends Component {
   constructor(props) {
