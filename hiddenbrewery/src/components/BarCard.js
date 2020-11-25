@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     width: 300,
-    margin: 5,
+    margin: 8,
   },
   media: {
     height: 140,
@@ -35,7 +35,6 @@ export default function BarCard(props) {
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {props.street}
-            <a href={props.website}>{props.website}</a>
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -44,7 +43,7 @@ export default function BarCard(props) {
           Share
         </Button>
         <Button size="small" variant="contained">
-          Visit
+          <a href={props.website}>Visit</a>
         </Button>
       </CardActions>
     </Card>

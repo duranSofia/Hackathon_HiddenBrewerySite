@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import BarResults from "../components/BarResults";
 import Geocode from "react-geocode";
 import GoogleKey from "../key";
-import "../components/FilterCategories.css";
 import { Redirect } from "react-router-dom";
 import RealHeader from "../components/RealHeader";
 import BarHome from "../media/homeIMG.png";
