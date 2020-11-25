@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import BarsList from "./BarsList";
 import MyMapComponent from "./Map";
+import BarHome from "../media/homeIMG.png";
+
 import "./resultsTab.css";
 
 function TabPanel(props) {
@@ -21,7 +23,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -34,8 +36,8 @@ export default function Results(props) {
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
   };
-  
-  console.log("Bar Results", props);
+
+  console.log("Bar Results-->", props.bars);
   return (
     <div className="results-section">
       <AppBar position="static">
@@ -44,22 +46,20 @@ export default function Results(props) {
           onChange={handleTabChange}
           aria-label="simple tabs example"
         >
-          <Tab label="Map" />
           <Tab label="List" />
+          <Tab label="Map" />
         </Tabs>
       </AppBar>
 
       <TabPanel value={value} index={0}>
-        <div>
-
-          {/* {!props.loading && (
-            <MyMapComponent isMarkerShown places={props.bars} />
-          )} */}
-
-        </div>
+        <BarsList barsData={props.bars}></BarsList>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <BarsList barsCardInfo={props.barsList}></BarsList>
+        <MyMapComponent
+          isMarkerShown
+          places={props.bars}
+          userCoordinates={props.userCoordinates}
+        />
       </TabPanel>
     </div>
   );

@@ -1,7 +1,5 @@
-.filters-container {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+/* .filters-container {
+  display: block;
   padding: 10px;
   border-style: double;
   border-left: none;
@@ -21,4 +19,4 @@
   font-weight: 900;
   padding: 10px;
   margin: 5px;
-}
+} */
