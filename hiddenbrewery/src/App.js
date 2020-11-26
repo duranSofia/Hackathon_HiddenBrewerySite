@@ -31,7 +31,6 @@ function App() {
           <Route path="/access-allowed" exact>
             <Home isLoggedIn={loggedIn} />
           </Route>
-
         </Switch>
       </Router>
     </>

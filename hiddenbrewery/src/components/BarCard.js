@@ -40,7 +40,7 @@ export default function BarCard(props) {
       </CardActionArea>
       <CardActions>
         <Button size="small" variant="contained" color="primary">
-          Share
+          Bar Details
         </Button>
         <Button size="small" variant="contained">
           <a href={props.website}>Visit</a>
