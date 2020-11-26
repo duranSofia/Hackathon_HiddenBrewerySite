@@ -13,12 +13,12 @@ import {
 import Geocode from "react-geocode";
 
 //APIKey
-import GoogleKey from "../key";
+// import GoogleKey from "../key";
 
 //CSS
 import "./Map.css";
 
-Geocode.setApiKey(GoogleKey);
+Geocode.setApiKey(process.env.REACT_APP_MAPSKEY);
 
 const MarkerComponent = (props) => {
   const [isShown, setIsShown] = useState(true);
@@ -40,7 +40,7 @@ const MarkerComponent = (props) => {
         }
       );
   }, []);
-
+  console.log("map-props", props.place);
   return props.place.latitude != null ? (
     <Marker
       position={{
@@ -51,8 +51,8 @@ const MarkerComponent = (props) => {
     >
       {isExpand === true && (
         <InfoWindow marker={isShown} visible={isShown}>
-          <div>
-            <h4 className="mapCard">{props.place.name}</h4>
+          <div className="mapCard">
+            <h4>{props.place.name}</h4>
             {props.place.street !== "" && <p>Address: {props.place.street}</p>}
             <p>{props.place.website_url}</p>
           </div>
@@ -66,9 +66,10 @@ const MarkerComponent = (props) => {
     >
       {isExpand === true && (
         <InfoWindow marker={isShown} visible={isShown}>
-          <div>
-            <h4 className="mapCard">{props.place.name}</h4>
+          <div className="mapCard">
+            <h4>{props.place.name}</h4>
             {props.place.street !== "" && <p>Address: {props.place.street}</p>}
+            <p>{props.place.website_url}</p>
           </div>
         </InfoWindow>
       )}
@@ -78,7 +79,7 @@ const MarkerComponent = (props) => {
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${GoogleKey}&v=3.exp&libraries=geometry,drawing,places`,
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPSKEY}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: (
       <div
         style={{
@@ -101,7 +102,7 @@ const MyMapComponent = compose(
     {props.places.map((place, index) => {
       return (
         <>
-          <MarkerComponent place={place} />
+          <MarkerComponent key={index} place={place} />
         </>
       );
     })}
