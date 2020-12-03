@@ -36,7 +36,7 @@ const Details = (props) => {
   // console.log(breweryAddress);
 
   return loading ? (
-    <h1>loading...</h1>
+    <h1>loading......</h1>
   ) : (
     <Card className="Card-details" variant="outlined">
       <CardContent>
